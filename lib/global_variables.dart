@@ -1,0 +1,38 @@
+import 'dart:io';
+
+import 'package:classroom_nav/helpers/classes.dart';
+import 'package:classroom_nav/helpers/enums.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:signals/signals.dart';
+
+const double coordModValue = 0.0001;
+const double maxNeighborDistance = 10;
+double mapDefaultZoomValue = 18;
+double mapMaxZoomValue = 19;
+double defaultWalkingSpeedMPH = 3;
+LatLng debugCenterCoord = const LatLng(33.880766, -117.881812);
+LatLng? centerCoord;
+final showExploredPath = signal(false);
+final showMappingLayer = signal(false);
+final exploredPaths = signal<List<Polyline>>([]);
+final shortestPaths = signal<List<Polyline>>([]);
+final estimateNavTime = signal('');
+bool showDebugButtons = false;
+LatLng? destinationCoord;
+String destName = '';
+MapController mapController = MapController();
+List<Marker> mappedMakers = [];
+List<CoordPoint> mappedCoords = [];
+List<Polyline> mappedPaths = [];
+Signal<Polyline> markedToDelLine = Signal<Polyline>(Polyline(points: []));
+PathFindingState curPathFindingState = PathFindingState.idle;
+String mappedCoordsJsonPath = 'assets/jsons/mapped_coords.json';
+String mappedCoordsLocalJsonPath = '${Directory.current.path}/jsons/mapped_coords_local.json';
+bool mapDoneLoading = false;
+bool contUpdatePos = false;
+double prevRotationValue = 0.0;
+double manualHeadingValue = 0.0;
+List<LatLng> headingPolyline = [];
+int routingCoordCount = 0;
+Signal arrivedAtDest = Signal<bool>(false);
