@@ -427,8 +427,16 @@ class _MyHomePageState extends State<MyHomePage> {
   // Load mapped coords
   Future<List<Marker>> loadMappedMarkers(String jsonPath) async {
     List<Marker> markers = [];
-    if (!File(jsonPath).existsSync()) File(jsonPath).createSync();
-    String markersFromJson = kIsWeb || Platform.isAndroid ? await rootBundle.loadString(jsonPath) : await File(jsonPath).readAsString();
+    String markersFromJson = '';
+    if (kIsWeb) {
+      markersFromJson = await rootBundle.loadString(jsonPath);
+    } else if (Platform.isAndroid) {
+      markersFromJson = await rootBundle.loadString(jsonPath);
+    } else {
+      if (!File(jsonPath).existsSync()) File(jsonPath).createSync();
+      markersFromJson = await File(jsonPath).readAsString();
+    }
+
     if (markersFromJson.isNotEmpty) {
       var jsonData = await jsonDecode(markersFromJson);
       for (var coordPoint in jsonData) {
