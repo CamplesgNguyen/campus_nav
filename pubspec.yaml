@@ -1,4 +1,4 @@
-name: classroom_nav
+name: campus_nav
 description: "A navigation app project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -54,6 +54,7 @@ dependencies:
   sensors_plus: ^6.1.0
   flutter_map_math: ^0.1.7
   overlay_tooltip: ^0.2.4
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

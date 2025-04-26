@@ -1,5 +1,5 @@
-import 'package:classroom_nav/global_variables.dart';
-import 'package:classroom_nav/helpers/classes.dart';
+import 'package:campus_nav/global_variables.dart';
+import 'package:campus_nav/helpers/classes.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:units_converter/units_converter.dart';
@@ -33,12 +33,12 @@ bool onRouteCheck(List<LatLng> coords) {
   return true;
 }
 
-Future<List<CoordPoint>> suggestionsCallback(String pattern) async => Future<List<CoordPoint>>.delayed(
+Future<List<CoordPoint>> suggestionsCallback(String pattern, bool savedCoordsOnly) async => Future<List<CoordPoint>>.delayed(
       const Duration(milliseconds: 100),
       () => mappedCoords.where((e) => e.locName.isNotEmpty).where((point) {
         final nameLower = point.locName.toLowerCase().split(' ').join('');
         final patternLower = pattern.toLowerCase().split(' ').join('');
-        return nameLower.contains(patternLower);
+          return nameLower.contains(patternLower);
       }).toList(),
     );
 
@@ -74,8 +74,6 @@ double distanceToDest(LatLng curCoord, List<LatLng> coords) {
     return 0;
   }
 }
-
-
 
 double navMapRotation(List<LatLng> coords) {
   if (coords.isNotEmpty) {
@@ -145,4 +143,9 @@ List<LatLng> reRoute(LatLng startCoord, LatLng destCoord) {
   }
 
   return shortestPath;
+}
+
+String coordToString(LatLng? coord) {
+  if (coord == null) return '';
+  return '${coord.latitude}-${coord.longitude}';
 }

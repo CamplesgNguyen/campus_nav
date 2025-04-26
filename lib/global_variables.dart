@@ -1,7 +1,5 @@
-import 'dart:io';
-
-import 'package:classroom_nav/helpers/classes.dart';
-import 'package:classroom_nav/helpers/enums.dart';
+import 'package:campus_nav/helpers/classes.dart';
+import 'package:campus_nav/helpers/enums.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:signals/signals.dart';
@@ -28,7 +26,6 @@ List<Polyline> mappedPaths = [];
 Signal<Polyline> markedToDelLine = Signal<Polyline>(Polyline(points: []));
 PathFindingState curPathFindingState = PathFindingState.idle;
 String mappedCoordsJsonPath = 'assets/jsons/mapped_coords.json';
-String mappedCoordsLocalJsonPath = '${Directory.current.path}/jsons/mapped_coords_local.json';
 bool mapDoneLoading = false;
 bool contUpdatePos = false;
 double prevRotationValue = 0.0;
@@ -36,3 +33,4 @@ double manualHeadingValue = 0.0;
 List<LatLng> headingPolyline = [];
 int routingCoordCount = 0;
 Signal arrivedAtDest = Signal<bool>(false);
+List<String> savedCoordList = [];

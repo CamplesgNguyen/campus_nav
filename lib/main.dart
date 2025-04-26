@@ -5,14 +5,13 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:classroom_nav/global_variables.dart';
-import 'package:classroom_nav/helpers/helper_funcs.dart';
-import 'package:classroom_nav/helpers/classes.dart';
-import 'package:classroom_nav/helpers/custom_marker.dart';
-import 'package:classroom_nav/helpers/enums.dart';
-import 'package:classroom_nav/helpers/json_helpers.dart';
-import 'package:classroom_nav/helpers/popups.dart';
-import 'package:classroom_nav/widgets/marker_tooltip.dart';
+import 'package:campus_nav/global_variables.dart';
+import 'package:campus_nav/helpers/classes.dart';
+import 'package:campus_nav/helpers/custom_marker.dart';
+import 'package:campus_nav/helpers/enums.dart';
+import 'package:campus_nav/helpers/helper_funcs.dart';
+import 'package:campus_nav/helpers/json_helpers.dart';
+import 'package:campus_nav/helpers/popups.dart';
 import 'package:duration/duration.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +24,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:overlay_tooltip/overlay_tooltip.dart';
 import 'package:sensors_plus/sensors_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:signals/signals_flutter.dart';
 import 'package:units_converter/models/extension_converter.dart';
 import 'package:units_converter/properties/length.dart';
@@ -37,11 +37,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Campus Navigation',
+      title: 'CSUF Campus Navigation App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 27, 51, 229)),
         useMaterial3: true,
@@ -67,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
   LocationMarkerHeading? userMarkerHeadingData;
   Stream<Position> positionStream = Geolocator.getPositionStream(locationSettings: const LocationSettings(accuracy: LocationAccuracy.high, distanceFilter: 1));
   bool onRoute = true;
+  bool showOnlySavedCoords = false;
   Signal headingAccuracy = Signal<double>(0.0);
   late Future permission;
 
@@ -75,27 +75,25 @@ class _MyHomePageState extends State<MyHomePage> {
     permission = checkLocationPerm();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       // Load mapped markers
-      mappedMakers = kIsWeb
-          ? await loadMappedMarkers(mappedCoordsJsonPath)
-          : Platform.isWindows
-              ? await loadMappedMarkers(mappedCoordsLocalJsonPath)
-              : await loadMappedMarkers(mappedCoordsJsonPath);
+      mappedMakers = await loadMappedMarkers(mappedCoordsJsonPath);
+      // Load saved coords
+      final prefs = await SharedPreferences.getInstance();
+      savedCoordList = prefs.getStringList('savedCoords') ?? [];
     });
     super.initState();
   }
-  
-  
 
   Future<bool> checkLocationPerm() async {
     LocationPermission perm = await Geolocator.checkPermission();
-    if (perm == LocationPermission.always || perm == LocationPermission.whileInUse) {
-      return true;
-    } else {
+    while (perm != LocationPermission.whileInUse && perm != LocationPermission.always) {
       await Geolocator.requestPermission();
       perm = await Geolocator.checkPermission();
-      if (perm == LocationPermission.always || perm == LocationPermission.whileInUse) return true;
     }
-    return false;
+    if (perm == LocationPermission.whileInUse || perm == LocationPermission.always) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   void routingFinish() {
@@ -172,8 +170,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           initialCenter: centerCoord!,
                           initialZoom: mapDefaultZoomValue,
                           maxZoom: mapMaxZoomValue,
-                          // cameraConstraint:
-                          //     CameraConstraint.containCenter(bounds: LatLngBounds(const LatLng(33.8892181509212, -117.89024039406391), const LatLng(33.87568283383185, -117.87979836324752))),
+                          cameraConstraint:
+                              CameraConstraint.containCenter(bounds: LatLngBounds(const LatLng(33.8892181509212, -117.89024039406391), const LatLng(33.87568283383185, -117.87979836324752))),
                           onMapReady: () {
                             mapDoneLoading = true;
                             setState(() {});
@@ -222,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             // Display map tiles from osm
                             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', // OSMF's Tile Server
                             userAgentPackageName: 'com.campusnav.app',
-                            tileBounds: LatLngBounds(const LatLng(33.8892181509212, -117.89024039406391), const LatLng(33.87568283383185, -117.87979836324752)),
+                            // tileBounds: LatLngBounds(const LatLng(33.8892181509212, -117.89024039406391), const LatLng(33.87568283383185, -117.87979836324752)),
                           ),
 
                           //Mapped markers in nav mode
@@ -271,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: PolylineLayer(
                                 polylines: mappedPaths,
                               )),
-                            Visibility(
+                          Visibility(
                               visible: showMappingLayer.watch(context) && curPathFindingState == PathFindingState.idle && markedToDelLine.watch(context).points.isNotEmpty,
                               child: PolylineLayer(
                                 polylines: [markedToDelLine.watch(context)],
@@ -280,99 +278,122 @@ class _MyHomePageState extends State<MyHomePage> {
 
                           // Destination lookup textfield
                           Padding(
-                            padding: EdgeInsets.only(
-                                top: kIsWeb
-                                    ? 5
-                                    : Platform.isAndroid
-                                        ? 30
-                                        : 5,
-                                bottom: 5,
-                                left: 5,
-                                right: 5),
-                            child: TypeAheadField<CoordPoint>(
-                              direction: VerticalDirection.down,
-                              controller: destLookupTextController,
-                              builder: (context, controller, focusNode) => TextField(
-                                controller: controller,
-                                focusNode: focusNode,
-                                autofocus: false,
-                                style: DefaultTextStyle.of(context).style.copyWith(fontStyle: FontStyle.italic),
-                                decoration: InputDecoration(
-                                    filled: true,
-                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                                    hintText: 'Enter your destination',
-                                    suffixIcon: IconButton(
-                                        onPressed: () {
-                                          if (destLookupTextController.text.isEmpty) {
-                                            curPathFindingState = PathFindingState.idle;
-                                            focusNode.unfocus();
-                                            exploredCoordinates.clear();
-                                            shortestCoordinates.clear();
-                                            destLookupTextController.clear();
-                                            destinationCoord = null;
-                                            destName = '';
-                                            mapController.move(centerCoord!, mapDefaultZoomValue);
-                                            mapController.rotate(0);
-                                            manualHeadingValue = 0.0;
-                                            contUpdatePos = false;
-                                            arrivedAtDest.value = false;
-                                          } else {
-                                            destLookupTextController.clear();
-                                            curPathFindingState = PathFindingState.idle;
-                                            destinationCoord = null;
-                                            destName = '';
-                                          }
-                                          setState(() {});
-                                        },
-                                        icon: const Icon(Icons.clear))),
-                              ),
-                              decorationBuilder: (context, child) => Material(
-                                type: MaterialType.card,
-                                elevation: 4,
-                                borderRadius: BorderRadius.circular(10),
-                                child: child,
-                              ),
-                              itemBuilder: (context, point) => ListTile(
-                                title: Text(point.locName),
-                              ),
-                              hideOnEmpty: true,
-                              hideOnSelect: true,
-                              hideOnUnfocus: true,
-                              hideWithKeyboard: true,
-                              retainOnLoading: true,
-                              onSelected: (point) {
-                                //reset
-                                curPathFindingState = PathFindingState.idle;
-                                exploredCoordinates.clear();
-                                shortestCoordinates.clear();
-                                destLookupTextController.clear();
-                                destinationCoord = null;
-                                destName = '';
-                                mapController.move(centerCoord!, mapDefaultZoomValue);
-                                mapController.rotate(0);
-                                manualHeadingValue = 0.0;
-                                contUpdatePos = false;
-                                arrivedAtDest.value = false;
-                                //new route
-                                destLookupTextController.text = point.locName;
-                                destinationCoord = point.coord;
-                                destName = point.locName;
-                                FocusScope.of(context).unfocus();
-                                mapController.rotate(0);
-                                mapController.move(point.coord, mapDefaultZoomValue);
-                                curPathFindingState = PathFindingState.ready;
-                                setState(() {});
-                              },
-                              suggestionsCallback: (String search) {
-                                return suggestionsCallback(search);
-                              },
-                              loadingBuilder: (context) => const Text('Loading...'),
-                              errorBuilder: (context, error) => const Text('Error!'),
-                              emptyBuilder: (context) => const Text('No rooms found!'),
-                              // itemSeparatorBuilder: itemSeparatorBuilder,
-                              // listBuilder: settings.gridLayout.value ? gridLayoutBuilder : null,
-                            ),
-                          ),
+                              padding: EdgeInsets.only(
+                                  top: kIsWeb
+                                      ? 5
+                                      : Platform.isAndroid
+                                          ? 30
+                                          : 5,
+                                  bottom: 5,
+                                  left: 5,
+                                  right: 5),
+                              child: TypeAheadField<CoordPoint>(
+                                direction: VerticalDirection.down,
+                                controller: destLookupTextController,
+                                builder: (context, controller, focusNode) => TextField(
+                                  controller: controller,
+                                  focusNode: focusNode,
+                                  autofocus: false,
+                                  style: DefaultTextStyle.of(context).style.copyWith(fontStyle: FontStyle.italic),
+                                  decoration: InputDecoration(
+                                      filled: true,
+                                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                                      hintText: 'Enter your destination',
+                                      suffixIcon: Row(
+                                        spacing: 1,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          IconButton(
+                                              visualDensity: VisualDensity.adaptivePlatformDensity,
+                                              onPressed: savedCoordList.isNotEmpty
+                                                  ? () {
+                                                      if (showOnlySavedCoords) {
+                                                        showOnlySavedCoords = false;
+                                                        focusNode.unfocus();
+                                                      } else {
+                                                        showOnlySavedCoords = true;
+                                                        focusNode.requestFocus();
+                                                      }
+
+                                                      setState(() {});
+                                                    }
+                                                  : null,
+                                              icon: Icon(showOnlySavedCoords ? Icons.saved_search_outlined : Icons.saved_search)),
+                                          IconButton(
+                                              visualDensity: VisualDensity.adaptivePlatformDensity,
+                                              onPressed: () {
+                                                if (destLookupTextController.text.isEmpty) {
+                                                  curPathFindingState = PathFindingState.idle;
+                                                  focusNode.unfocus();
+                                                  exploredCoordinates.clear();
+                                                  shortestCoordinates.clear();
+                                                  destLookupTextController.clear();
+                                                  destinationCoord = null;
+                                                  destName = '';
+                                                  mapController.move(centerCoord!, mapDefaultZoomValue);
+                                                  mapController.rotate(0);
+                                                  manualHeadingValue = 0.0;
+                                                  contUpdatePos = false;
+                                                  arrivedAtDest.value = false;
+                                                } else {
+                                                  destLookupTextController.clear();
+                                                  curPathFindingState = PathFindingState.idle;
+                                                  destinationCoord = null;
+                                                  destName = '';
+                                                }
+                                                setState(() {});
+                                              },
+                                              icon: const Icon(Icons.clear))
+                                        ],
+                                      )),
+                                ),
+                                decorationBuilder: (context, child) => Material(
+                                  type: MaterialType.card,
+                                  elevation: 4,
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: child,
+                                ),
+                                itemBuilder: (context, point) => ListTile(
+                                  title: Text(point.locName),
+                                  trailing: savedCoordList.contains(coordToString(point.coord)) ? const Icon(Icons.save) : null,
+                                ),
+                                hideOnEmpty: true,
+                                hideOnSelect: true,
+                                hideOnUnfocus: true,
+                                hideWithKeyboard: true,
+                                retainOnLoading: true,
+                                onSelected: (point) {
+                                  //reset
+                                  curPathFindingState = PathFindingState.idle;
+                                  exploredCoordinates.clear();
+                                  shortestCoordinates.clear();
+                                  destLookupTextController.clear();
+                                  destinationCoord = null;
+                                  destName = '';
+                                  mapController.move(centerCoord!, mapDefaultZoomValue);
+                                  mapController.rotate(0);
+                                  manualHeadingValue = 0.0;
+                                  contUpdatePos = false;
+                                  arrivedAtDest.value = false;
+                                  //new route
+                                  destLookupTextController.text = point.locName;
+                                  destinationCoord = point.coord;
+                                  destName = point.locName;
+                                  FocusScope.of(context).unfocus();
+                                  mapController.rotate(0);
+                                  mapController.move(point.coord, mapDefaultZoomValue);
+                                  curPathFindingState = PathFindingState.ready;
+                                  setState(() {});
+                                },
+                                suggestionsCallback: (String search) {
+                                  return suggestionsCallback(search, showOnlySavedCoords);
+                                },
+                                loadingBuilder: (context) => const Text('Loading...'),
+                                errorBuilder: (context, error) => const Text('Error!'),
+                                emptyBuilder: (context) => const Text('No rooms found!'),
+                                // itemSeparatorBuilder: itemSeparatorBuilder,
+                                // listBuilder: settings.gridLayout.value ? gridLayoutBuilder : null,
+                              )),
 
                           // Map credit
                           RichAttributionWidget(
@@ -559,7 +580,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: SizedBox(
                       height: 25,
                       child: Text(
-                        arrivedAtDest.watch(context) ? 'Arrived!' : 'Time Estimate: ${estimateNavTime.watch(context)}',
+                        arrivedAtDest.watch(context) ? 'Arrived!' : 'Estimated Time: ${estimateNavTime.watch(context)}',
                         textAlign: TextAlign.center,
                         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                       )),
@@ -604,11 +625,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: FloatingActionButton.small(
-                        onPressed: () {
-                          mapController.move(centerCoord!, 19);
+                        onPressed: () async {
+                          final prefs = await SharedPreferences.getInstance();
+                          String curCoordString = coordToString(destinationCoord);
+                          if (!savedCoordList.contains(curCoordString)) {
+                            savedCoordList.add(curCoordString);
+                            prefs.setStringList('savedCoords', savedCoordList);
+                          } else {
+                            savedCoordList.remove(curCoordString);
+                            prefs.setStringList('savedCoords', savedCoordList);
+                          }
                           setState(() {});
                         },
-                        child: const Icon(Icons.gps_fixed_outlined)))),
+                        child: Icon(savedCoordList.contains(coordToString(destinationCoord)) ? Icons.save : Icons.save_outlined)))),
             Visibility(
                 visible: curPathFindingState == PathFindingState.finished,
                 child: Padding(
@@ -625,6 +654,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           setState(() {});
                         },
                         child: const Icon(Icons.route_outlined)))),
+            Visibility(
+                visible: curPathFindingState == PathFindingState.finished,
+                child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: FloatingActionButton.small(
+                        onPressed: () {
+                          mapController.move(centerCoord!, 19);
+                          setState(() {});
+                        },
+                        child: const Icon(Icons.gps_fixed_outlined)))),
             GestureDetector(
               onLongPress: () {
                 showDebugButtons ? showDebugButtons = false : showDebugButtons = true;

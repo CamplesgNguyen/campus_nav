@@ -1,6 +1,6 @@
-import 'package:classroom_nav/global_variables.dart';
-import 'package:classroom_nav/helpers/classes.dart';
-import 'package:classroom_nav/helpers/json_helpers.dart';
+import 'package:campus_nav/global_variables.dart';
+import 'package:campus_nav/helpers/classes.dart';
+import 'package:campus_nav/helpers/json_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/flutter_map.dart';
