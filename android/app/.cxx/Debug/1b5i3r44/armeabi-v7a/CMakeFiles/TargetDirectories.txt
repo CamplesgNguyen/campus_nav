@@ -1,0 +1,2 @@
+C:/Users/kizkizz/Documents/GitHub/campus_nav/android/app/.cxx/Debug/1b5i3r44/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/kizkizz/Documents/GitHub/campus_nav/android/app/.cxx/Debug/1b5i3r44/armeabi-v7a/CMakeFiles/rebuild_cache.dir
