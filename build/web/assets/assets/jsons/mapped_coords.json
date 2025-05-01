@@ -2,6 +2,33 @@
   {
     "coord": {
       "coordinates": [
+        -117.8855366029173,
+        33.87946446598367
+      ]
+    },
+    "locName": "McCarthy Hall South Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88553526181401,
+          33.879412136110105
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88553753872117,
+          33.879523177844355
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
         -117.88238356359932,
         33.87986941391527
       ]
@@ -28,33 +55,6 @@
         "coordinates": [
           -117.88246139832385,
           33.87981035567506
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88239009087339,
-        33.880552465399596
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88239009087339,
-          33.880602567801674
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88238740866485,
-          33.8805012495809
         ]
       }
     ]
@@ -4493,32 +4493,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88345735620564,
-        33.87883604794555
+        -117.88158184037182,
+        33.88039240590608
       ]
     },
-    "locName": "Mihaylo Hall South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88354074117396,
-          33.87880092515783
+          -117.88166364774678,
+          33.8803935192952
         ]
       },
       {
         "coordinates": [
-          -117.88339972899784,
-          33.87888607190008
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88352917849802,
-          33.878893672797744
+          -117.88149332747432,
+          33.88039685946248
         ]
       }
     ]
@@ -41348,32 +41342,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.88351137602363,
-        33.88426370628574
+        -117.88553892501797,
+        33.8848114384789
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Titan Track Complex South Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88353515155264,
-          33.88419081292981
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88346845116747,
-          33.88418758831786
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88350440353268,
-          33.884315437231024
+          -117.88549138012172,
+          33.8847594549048
         ]
       }
     ]
@@ -44927,26 +44909,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88358818709634,
-        33.878934868909106
+        -117.88166364774678,
+        33.8803935192952
       ]
     },
-    "locName": "Mihaylo Hall North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88352917849802,
-          33.878893672797744
+          -117.88175081953975,
+          33.88039129251693
         ]
       },
       {
         "coordinates": [
-          -117.88364719569466,
-          33.87899053929824
+          -117.88158184037182,
+          33.88039240590608
         ]
       }
     ]
@@ -45035,26 +45017,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88558622377997,
-        33.878981248477956
+        -117.88175081953975,
+        33.88039129251693
       ]
     },
-    "locName": "Dan Black Hall South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88558220046643,
-          33.87889217582816
+          -117.8818299447057,
+          33.880390179127794
         ]
       },
       {
         "coordinates": [
-          -117.88559132530781,
-          33.879057332565324
+          -117.88166364774678,
+          33.8803935192952
         ]
       }
     ]
@@ -45173,80 +45155,80 @@
   {
     "coord": {
       "coordinates": [
-        -117.88560097593243,
-        33.87930302265158
+        -117.8818299447057,
+        33.880390179127794
       ]
     },
-    "locName": "Dan Black Hall North Entrance",
+    "locName": "",
     "isBEntrancePoint": false,
-    "isREntrancePoint": true,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88560309214415,
-          33.87934521025381
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88560081011168,
-          33.87924136126362
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88555001396237,
-        33.87986862967519
-      ]
-    },
-    "locName": "McCarthy Hall North Entrance",
-    "isBEntrancePoint": true,
-    "isREntrancePoint": true,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88555001396237,
-          33.879915392292794
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88554933310166,
-          33.87980113454943
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.8855366029173,
-        33.87946446598367
-      ]
-    },
-    "locName": "McCarthy Hall South Entrance",
-    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88553526181401,
-          33.879412136110105
+          -117.88191577539418,
+          33.880390179127794
         ]
       },
       {
         "coordinates": [
-          -117.88553753872117,
-          33.879523177844355
+          -117.88175081953975,
+          33.88039129251693
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88191577539418,
+        33.880390179127794
+      ]
+    },
+    "locName": "",
+    "isBEntrancePoint": false,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88201501712771,
+          33.88038906573862
+        ]
+      },
+      {
+        "coordinates": [
+          -117.8818299447057,
+          33.880390179127794
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88201501712771,
+        33.88038906573862
+      ]
+    },
+    "locName": "",
+    "isBEntrancePoint": false,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88209950671168,
+          33.88038572557106
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88191577539418,
+          33.880390179127794
         ]
       }
     ]
@@ -45731,20 +45713,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88506173696484,
-        33.87981000613647
+        -117.88209950671168,
+        33.88038572557106
       ]
     },
-    "locName": "McCarthy Hall North East Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8849591358926,
-          33.87981011583673
+          -117.88219070181819,
+          33.880382385403344
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88201501712771,
+          33.88038906573862
         ]
       }
     ]
@@ -45752,20 +45740,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88505369033781,
-        33.879550584304646
+        -117.88139274463627,
+        33.880522672334635
       ]
     },
-    "locName": "McCarthy Hall South East Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8849537833947,
-          33.87955044308359
+          -117.88139274463627,
+          33.88057277475419
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88139140353175,
+          33.880474796661794
         ]
       }
     ]
@@ -45773,20 +45767,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88384078335925,
-        33.87949822179056
+        -117.88139140353175,
+        33.880474796661794
       ]
     },
-    "locName": "Carls Jr North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88384212446535,
-          33.8795216032045
+          -117.88139006242726,
+          33.88039797285155
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88139274463627,
+          33.880522672334635
         ]
       }
     ]
@@ -45794,20 +45794,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88390381527108,
-        33.87936795379807
+        -117.88139006242726,
+        33.88039797285155
       ]
     },
-    "locName": "Carls Jr West Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88393063736285,
-          33.8793679537985
+          -117.88139140353175,
+          33.880474796661794
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88149332747432,
+          33.88039685946248
         ]
       }
     ]
@@ -45815,20 +45821,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88376702261132,
-        33.87936795379807
+        -117.88138872132275,
+        33.880634011004815
       ]
     },
-    "locName": "Carls Jr East Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88373483610475,
-          33.879369067200976
+          -117.88138738021823,
+          33.88068299997367
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88139274463627,
+          33.88057277475419
         ]
       }
     ]
@@ -46130,26 +46142,32 @@
   {
     "coord": {
       "coordinates": [
-        -117.88414789629488,
-        33.87955611861345
+        -117.88139274463627,
+        33.88057277475419
       ]
     },
-    "locName": "Gordan Hall South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88414387298134,
-          33.87952939700831
+          -117.8814866219518,
+          33.88057388814097
         ]
       },
       {
         "coordinates": [
-          -117.88414938708806,
-          33.87963861614674
+          -117.88138872132275,
+          33.880634011004815
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88139274463627,
+          33.880522672334635
         ]
       }
     ]
@@ -46391,38 +46409,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88415057850389,
-        33.87989681834555
+        -117.8814866219518,
+        33.88057388814097
       ]
     },
-    "locName": "Gordan Hall North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8841519196084,
-          33.879944694342704
+          -117.88158586368533,
+          33.88057054798061
         ]
       },
       {
         "coordinates": [
-          -117.88423714739741,
-          33.87989925122518
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88407671885675,
-          33.879900762397675
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88415341040157,
-          33.879837914328505
+          -117.88139274463627,
+          33.88057277475419
         ]
       }
     ]
@@ -47453,32 +47459,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88267430523898,
-        33.88251941683753
+        -117.88158586368533,
+        33.88057054798061
       ]
     },
-    "locName": "Computer Science North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88267484687461,
-          33.882453720595436
+          -117.88168778762791,
+          33.88056832120698
         ]
       },
       {
         "coordinates": [
-          -117.88262660616202,
-          33.88254095420767
-        ]
-      },
-      {
-        "coordinates": [
-          -117.8827317307857,
-          33.882574939971214
+          -117.8814866219518,
+          33.88057388814097
         ]
       }
     ]
@@ -47594,32 +47594,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88267508318344,
-        33.88214627367077
+        -117.88168778762791,
+        33.88056832120698
       ]
     },
-    "locName": "Computer Science South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8826703868021,
-          33.882203019700825
+          -117.88178702936146,
+          33.88056720782015
         ]
       },
       {
         "coordinates": [
-          -117.88259705076304,
-          33.882127784572425
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88274854257885,
-          33.88215322824077
+          -117.88158586368533,
+          33.88057054798061
         ]
       }
     ]
@@ -47654,26 +47648,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88323799970102,
-        33.88251718847027
+        -117.88178702936146,
+        33.88056720782015
       ]
     },
-    "locName": "Engineering North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88323696574999,
-          33.88256127888541
+          -117.88189431772206,
+          33.88056498104641
         ]
       },
       {
         "coordinates": [
-          -117.88316991377337,
-          33.882560730914236
+          -117.88168778762791,
+          33.88056832120698
         ]
       }
     ]
@@ -47681,26 +47675,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88323182580906,
-        33.882133008855774
+        -117.88189431772206,
+        33.88056498104641
       ]
     },
-    "locName": "Engineering South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88323137288293,
-          33.88206994742466
+          -117.8819935594556,
+          33.88056386765953
         ]
       },
       {
         "coordinates": [
-          -117.88317633745717,
-          33.882073951338796
+          -117.88178702936146,
+          33.88056720782015
         ]
       }
     ]
@@ -51896,26 +51890,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88226416169283,
-        33.880311066395336
+        -117.8819935594556,
+        33.88056386765953
       ]
     },
-    "locName": "Eastside Parking Structure South",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88232633547965,
-          33.880312908653345
+          -117.88209682450268,
+          33.880562754272624
         ]
       },
       {
         "coordinates": [
-          -117.88218801960919,
-          33.880308901680614
+          -117.88189431772206,
+          33.88056498104641
         ]
       }
     ]
@@ -51923,26 +51917,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88229644990956,
-        33.880972135828415
+        -117.88209682450268,
+        33.880562754272624
       ]
     },
-    "locName": "Eastside Parking Structure North",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8823954552915,
-          33.88097332466281
+          -117.88219740734074,
+          33.88056052749879
         ]
       },
       {
         "coordinates": [
-          -117.88222154722187,
-          33.880971366288506
+          -117.8819935594556,
+          33.88056386765953
         ]
       }
     ]
@@ -51950,20 +51944,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.88680673570855,
-        33.88161670045952
+        -117.88219070181819,
+        33.88004725457833
       ]
     },
-    "locName": "Titan Shops",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88680222700178,
-          33.88154991258497
+          -117.8821893607137,
+          33.88013632602236
         ]
       }
     ]
@@ -52367,20 +52361,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88850073574099,
-        33.879450767801
+        -117.8821893607137,
+        33.88013632602236
       ]
     },
-    "locName": "Nutwood Parking Structure North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88843770382911,
-          33.8794529946038
+          -117.88218801960919,
+          33.88021203667671
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88219070181819,
+          33.88004725457833
         ]
       }
     ]
@@ -52745,20 +52745,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88779263257068,
-        33.8786301870153
+        -117.88218399629567,
+        33.880261025887826
       ]
     },
-    "locName": "Nutwood Parking Structure South East Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8877228951363,
-          33.87861125900713
+          -117.88218801960919,
+          33.88021203667671
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88218801960919,
+          33.880308901680614
         ]
       }
     ]
@@ -52982,26 +52988,32 @@
   {
     "coord": {
       "coordinates": [
-        -117.88716434829709,
-        33.878586528878394
+        -117.88218801960919,
+        33.880308901680614
       ]
     },
-    "locName": "Lot C East Parking",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88723542683675,
-          33.87862661172605
+          -117.88226416169283,
+          33.880311066395336
         ]
       },
       {
         "coordinates": [
-          -117.88711740964011,
-          33.87861770442824
+          -117.88219070181819,
+          33.880382385403344
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88218399629567,
+          33.880261025887826
         ]
       }
     ]
@@ -53225,26 +53237,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88340373298192,
-        33.87954731738289
+        -117.88218801960919,
+        33.88021203667671
       ]
     },
-    "locName": "Mihaylo Hall Parking Lot",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88344530722324,
-          33.87957181218346
+          -117.88218399629567,
+          33.880261025887826
         ]
       },
       {
         "coordinates": [
-          -117.88335679432573,
-          33.879531729779956
+          -117.8821893607137,
+          33.88013632602236
         ]
       }
     ]
@@ -53669,20 +53681,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88424888395264,
-        33.88059747054223
+        -117.8821920429227,
+        33.880443621790604
       ]
     },
-    "locName": "Human & Social Sciences Building North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88418465488483,
-          33.880643090005144
+          -117.8821933840272,
+          33.88049038409311
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88219070181819,
+          33.880382385403344
         ]
       }
     ]
@@ -53690,26 +53708,32 @@
   {
     "coord": {
       "coordinates": [
-        -117.88388008021312,
-        33.880469431004215
+        -117.88219070181819,
+        33.880382385403344
       ]
     },
-    "locName": "Human & Social Sciences Building East Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88387605689961,
-          33.880541801201524
+          -117.8821920429227,
+          33.880443621790604
         ]
       },
       {
         "coordinates": [
-          -117.88387605689961,
-          33.8804215553015
+          -117.88218801960919,
+          33.880308901680614
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88209950671168,
+          33.88038572557106
         ]
       }
     ]
@@ -53777,20 +53801,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88468315817035,
-        33.87884925243015
+        -117.8821933840272,
+        33.88049038409311
       ]
     },
-    "locName": "Langsdorf Hall South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88468190038682,
-          33.87878887052626
+          -117.88219740734074,
+          33.88056052749879
+        ]
+      },
+      {
+        "coordinates": [
+          -117.8821920429227,
+          33.880443621790604
         ]
       }
     ]
@@ -53798,32 +53828,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88540395621338,
-        33.88089484258853
+        -117.88219740734074,
+        33.88056052749879
       ]
     },
-    "locName": "Pollak Library South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8853296899892,
-          33.880847704633666
+          -117.8821933840272,
+          33.88049038409311
         ]
       },
       {
         "coordinates": [
-          -117.8853990574199,
-          33.88084440287947
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88547914987888,
-          33.88084454803563
+          -117.88209682450268,
+          33.880562754272624
         ]
       }
     ]
@@ -53831,26 +53855,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.8851022076994,
-        33.88150386068229
+        -117.88146248207065,
+        33.880793225050766
       ]
     },
-    "locName": "Starbucks Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88499648646497,
-          33.8814954810328
+          -117.88153892502757,
+          33.88078877151508
         ]
       },
       {
         "coordinates": [
-          -117.88517079039431,
-          33.88152631586352
+          -117.88138603911372,
+          33.880793225050766
         ]
       }
     ]
@@ -56210,20 +56234,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88827158952344,
-        33.8834940908611
+        -117.88138201580021,
+        33.88074089599154
       ]
     },
-    "locName": "State College Parking Structure North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88820372553793,
-          33.88351961859008
+          -117.88138738021823,
+          33.88068299997367
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88138603911372,
+          33.880793225050766
         ]
       }
     ]
@@ -56231,20 +56261,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88740722183815,
-        33.88286828292993
+        -117.88138603911372,
+        33.880793225050766
       ]
     },
-    "locName": "Student Recreation Center South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88731613275945,
-          33.88286364468246
+          -117.88138201580021,
+          33.88074089599154
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88146248207065,
+          33.880793225050766
         ]
       }
     ]
@@ -56252,20 +56288,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88778138999653,
-        33.883457246655716
+        -117.88153892502757,
+        33.88078877151508
       ]
     },
-    "locName": "Student Recreation Center North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8877851715747,
-          33.88353278260668
+          -117.88162609682057,
+          33.88079099828296
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88146248207065,
+          33.880793225050766
         ]
       }
     ]
@@ -56348,26 +56390,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88782736915269,
-        33.88412921704069
+        -117.88162609682057,
+        33.88079099828296
       ]
     },
-    "locName": "Lot D Parking",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88777238386805,
-          33.88410472354914
+          -117.88172802076313,
+          33.880787658131126
         ]
       },
       {
         "coordinates": [
-          -117.88776970165904,
-          33.884180430682214
+          -117.88153892502757,
+          33.88078877151508
         ]
       }
     ]
@@ -56789,26 +56831,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88782390019814,
-        33.88678675256633
+        -117.88172802076313,
+        33.880787658131126
       ]
     },
-    "locName": "Titan Stadium North West Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88783234584176,
-          33.88684398058688
+          -117.8818151925561,
+          33.880784317979135
         ]
       },
       {
         "coordinates": [
-          -117.8878884199127,
-          33.88677154923669
+          -117.88162609682057,
+          33.88079099828296
         ]
       }
     ]
@@ -56957,20 +56999,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88767616848853,
-        33.88616067393998
+        -117.8818151925561,
+        33.880784317979135
       ]
     },
-    "locName": "Titan Stadium South West Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88769045198947,
-          33.886081381522324
+          -117.88191041097615,
+          33.880782091211074
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88172802076313,
+          33.880787658131126
         ]
       }
     ]
@@ -58844,20 +58892,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88625052329667,
-        33.8859042129035
+        -117.88191041097615,
+        33.880782091211074
       ]
     },
-    "locName": "Titan Stadium South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88622520003895,
-          33.8858373725226
+          -117.88200697050068,
+          33.880783204595105
+        ]
+      },
+      {
+        "coordinates": [
+          -117.8818151925561,
+          33.880784317979135
         ]
       }
     ]
@@ -58865,20 +58919,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88553892501797,
-        33.8848114384789
+        -117.88200697050068,
+        33.880783204595105
       ]
     },
-    "locName": "Titan Track Complex South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88549138012172,
-          33.8847594549048
+          -117.88211291775677,
+          33.880780977827015
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88191041097615,
+          33.880782091211074
         ]
       }
     ]
@@ -58886,20 +58946,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88424596928891,
-        33.88272738561755
+        -117.88211291775677,
+        33.880780977827015
       ]
     },
-    "locName": "Student Health & Counseling Center South Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88423597491176,
-          33.88265152729742
+          -117.88221215949034,
+          33.88078543136314
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88200697050068,
+          33.880783204595105
         ]
       }
     ]
@@ -58907,20 +58973,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88303714235515,
-        33.8815104825509
+        -117.88221215949034,
+        33.88078543136314
       ]
     },
-    "locName": "Lot I Parking",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88303462045882,
-          33.881442562444
+          -117.88222020611737,
+          33.88086225482454
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88211291775677,
+          33.880780977827015
         ]
       }
     ]
@@ -59411,20 +59483,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.8829986429378,
-        33.88020775926358
+        -117.88222020611737,
+        33.88086225482454
       ]
     },
-    "locName": "Lot F Parking",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88310454794274,
-          33.880225745851504
+          -117.88221886501286,
+          33.88090567675038
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88221215949034,
+          33.88078543136314
         ]
       }
     ]
@@ -60053,26 +60131,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88443266263499,
-        33.881149456818434
+        -117.88221886501286,
+        33.88090567675038
       ]
     },
-    "locName": "Education Classroom Building South Entrance",
+    "locName": "",
     "isBEntrancePoint": false,
-    "isREntrancePoint": true,
+    "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88443279929017,
-          33.88109156118897
+          -117.88222154722187,
+          33.880971366288506
         ]
       },
       {
         "coordinates": [
-          -117.88437229990811,
-          33.88115492552547
+          -117.88222020611737,
+          33.88086225482454
         ]
       }
     ]
@@ -60563,20 +60641,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88427503101595,
-        33.881455379713074
+        -117.88222154722187,
+        33.880971366288506
       ]
     },
-    "locName": "Education Classroom Building North Entrance",
-    "isBEntrancePoint": true,
+    "locName": "",
+    "isBEntrancePoint": false,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88420797329134,
-          33.88145638399952
+          -117.88229644990956,
+          33.880972135828415
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88221886501286,
+          33.88090567675038
         ]
       }
     ]
@@ -61274,8 +61358,8 @@
   {
     "coord": {
       "coordinates": [
-        -117.88222154722187,
-        33.880971366288506
+        -117.88351137602363,
+        33.88426370628574
       ]
     },
     "locName": "",
@@ -61286,14 +61370,20 @@
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88229644990956,
-          33.880972135828415
+          -117.88353515155264,
+          33.88419081292981
         ]
       },
       {
         "coordinates": [
-          -117.88221886501286,
-          33.88090567675038
+          -117.88346845116747,
+          33.88418758831786
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88350440353268,
+          33.884315437231024
         ]
       }
     ]
@@ -61301,545 +61391,230 @@
   {
     "coord": {
       "coordinates": [
-        -117.88221886501286,
-        33.88090567675038
+        -117.88376702261132,
+        33.87936795379807
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Carls Jr East Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88373483610475,
+          33.879369067200976
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88384078335925,
+        33.87949822179056
+      ]
+    },
+    "locName": "Carls Jr North Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88384212446535,
+          33.8795216032045
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88390381527108,
+        33.87936795379807
+      ]
+    },
+    "locName": "Carls Jr West Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88393063736285,
+          33.8793679537985
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88267430523898,
+        33.88251941683753
+      ]
+    },
+    "locName": "Computer Science North Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88267484687461,
+          33.882453720595436
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88262660616202,
+          33.88254095420767
+        ]
+      },
+      {
+        "coordinates": [
+          -117.8827317307857,
+          33.882574939971214
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88267508318344,
+        33.88214627367077
+      ]
+    },
+    "locName": "Computer Science South Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.8826703868021,
+          33.882203019700825
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88259705076304,
+          33.882127784572425
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88274854257885,
+          33.88215322824077
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88560097593243,
+        33.87930302265158
+      ]
+    },
+    "locName": "Dan Black Hall North Entrance",
+    "isBEntrancePoint": false,
+    "isREntrancePoint": true,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88560309214415,
+          33.87934521025381
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88560081011168,
+          33.87924136126362
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88558622377997,
+        33.878981248477956
+      ]
+    },
+    "locName": "Dan Black Hall South Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88558220046643,
+          33.87889217582816
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88559132530781,
+          33.879057332565324
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88229644990956,
+        33.880972135828415
+      ]
+    },
+    "locName": "Eastside Parking Structure North",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.8823954552915,
+          33.88097332466281
+        ]
+      },
       {
         "coordinates": [
           -117.88222154722187,
           33.880971366288506
         ]
-      },
-      {
-        "coordinates": [
-          -117.88222020611737,
-          33.88086225482454
-        ]
       }
     ]
   },
   {
     "coord": {
       "coordinates": [
-        -117.88222020611737,
-        33.88086225482454
+        -117.88226416169283,
+        33.880311066395336
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Eastside Parking Structure South",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88221886501286,
-          33.88090567675038
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88221215949034,
-          33.88078543136314
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88221215949034,
-        33.88078543136314
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88222020611737,
-          33.88086225482454
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88211291775677,
-          33.880780977827015
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88211291775677,
-        33.880780977827015
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88221215949034,
-          33.88078543136314
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88200697050068,
-          33.880783204595105
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88200697050068,
-        33.880783204595105
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88211291775677,
-          33.880780977827015
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88191041097615,
-          33.880782091211074
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88191041097615,
-        33.880782091211074
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88200697050068,
-          33.880783204595105
-        ]
-      },
-      {
-        "coordinates": [
-          -117.8818151925561,
-          33.880784317979135
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.8818151925561,
-        33.880784317979135
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88191041097615,
-          33.880782091211074
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88172802076313,
-          33.880787658131126
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88172802076313,
-        33.880787658131126
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.8818151925561,
-          33.880784317979135
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88162609682057,
-          33.88079099828296
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88162609682057,
-        33.88079099828296
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88172802076313,
-          33.880787658131126
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88153892502757,
-          33.88078877151508
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88153892502757,
-        33.88078877151508
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88162609682057,
-          33.88079099828296
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88146248207065,
-          33.880793225050766
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88138603911372,
-        33.880793225050766
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88138201580021,
-          33.88074089599154
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88146248207065,
-          33.880793225050766
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88138201580021,
-        33.88074089599154
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88138738021823,
-          33.88068299997367
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88138603911372,
-          33.880793225050766
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88146248207065,
-        33.880793225050766
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88153892502757,
-          33.88078877151508
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88138603911372,
-          33.880793225050766
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88219740734074,
-        33.88056052749879
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.8821933840272,
-          33.88049038409311
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88209682450268,
-          33.880562754272624
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.8821933840272,
-        33.88049038409311
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88219740734074,
-          33.88056052749879
-        ]
-      },
-      {
-        "coordinates": [
-          -117.8821920429227,
-          33.880443621790604
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88219070181819,
-        33.880382385403344
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.8821920429227,
-          33.880443621790604
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88218801960919,
-          33.880308901680614
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88209950671168,
-          33.88038572557106
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.8821920429227,
-        33.880443621790604
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.8821933840272,
-          33.88049038409311
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88219070181819,
-          33.880382385403344
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88218801960919,
-        33.88021203667671
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88218399629567,
-          33.880261025887826
-        ]
-      },
-      {
-        "coordinates": [
-          -117.8821893607137,
-          33.88013632602236
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88218801960919,
-        33.880308901680614
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88226416169283,
-          33.880311066395336
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88219070181819,
-          33.880382385403344
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88218399629567,
-          33.880261025887826
-        ]
-      }
-    ]
-  },
-  {
-    "coord": {
-      "coordinates": [
-        -117.88218399629567,
-        33.880261025887826
-      ]
-    },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
-    "isStairsPoint": false,
-    "isElevatorsPoint": false,
-    "neighborCoords": [
-      {
-        "coordinates": [
-          -117.88218801960919,
-          33.88021203667671
+          -117.88232633547965,
+          33.880312908653345
         ]
       },
       {
@@ -61853,26 +61628,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.8821893607137,
-        33.88013632602236
+        -117.88427503101595,
+        33.881455379713074
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Education Classroom Building North Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88218801960919,
-          33.88021203667671
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88219070181819,
-          33.88004725457833
+          -117.88420797329134,
+          33.88145638399952
         ]
       }
     ]
@@ -61880,20 +61649,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88219070181819,
-        33.88004725457833
+        -117.88443266263499,
+        33.881149456818434
       ]
     },
-    "locName": "",
+    "locName": "Education Classroom Building South Entrance",
     "isBEntrancePoint": false,
-    "isREntrancePoint": false,
+    "isREntrancePoint": true,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8821893607137,
-          33.88013632602236
+          -117.88443279929017,
+          33.88109156118897
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88437229990811,
+          33.88115492552547
         ]
       }
     ]
@@ -61901,26 +61676,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88209682450268,
-        33.880562754272624
+        -117.88323799970102,
+        33.88251718847027
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Engineering North Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88219740734074,
-          33.88056052749879
+          -117.88323696574999,
+          33.88256127888541
         ]
       },
       {
         "coordinates": [
-          -117.8819935594556,
-          33.88056386765953
+          -117.88316991377337,
+          33.882560730914236
         ]
       }
     ]
@@ -61928,26 +61703,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.8819935594556,
-        33.88056386765953
+        -117.88323182580906,
+        33.882133008855774
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Engineering South Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88209682450268,
-          33.880562754272624
+          -117.88323137288293,
+          33.88206994742466
         ]
       },
       {
         "coordinates": [
-          -117.88189431772206,
-          33.88056498104641
+          -117.88317633745717,
+          33.882073951338796
         ]
       }
     ]
@@ -61955,26 +61730,38 @@
   {
     "coord": {
       "coordinates": [
-        -117.88189431772206,
-        33.88056498104641
+        -117.88415057850389,
+        33.87989681834555
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Gordan Hall North Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8819935594556,
-          33.88056386765953
+          -117.8841519196084,
+          33.879944694342704
         ]
       },
       {
         "coordinates": [
-          -117.88178702936146,
-          33.88056720782015
+          -117.88423714739741,
+          33.87989925122518
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88407671885675,
+          33.879900762397675
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88415341040157,
+          33.879837914328505
         ]
       }
     ]
@@ -61982,26 +61769,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88178702936146,
-        33.88056720782015
+        -117.88414789629488,
+        33.87955611861345
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Gordan Hall South Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88189431772206,
-          33.88056498104641
+          -117.88414387298134,
+          33.87952939700831
         ]
       },
       {
         "coordinates": [
-          -117.88168778762791,
-          33.88056832120698
+          -117.88414938708806,
+          33.87963861614674
         ]
       }
     ]
@@ -62009,26 +61796,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88168778762791,
-        33.88056832120698
+        -117.88388008021312,
+        33.880469431004215
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Human & Social Sciences Building East Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88178702936146,
-          33.88056720782015
+          -117.88387605689961,
+          33.880541801201524
         ]
       },
       {
         "coordinates": [
-          -117.88158586368533,
-          33.88057054798061
+          -117.88387605689961,
+          33.8804215553015
         ]
       }
     ]
@@ -62036,26 +61823,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.88158586368533,
-        33.88057054798061
+        -117.88424888395264,
+        33.88059747054223
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Human & Social Sciences Building North Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88168778762791,
-          33.88056832120698
-        ]
-      },
-      {
-        "coordinates": [
-          -117.8814866219518,
-          33.88057388814097
+          -117.88418465488483,
+          33.880643090005144
         ]
       }
     ]
@@ -62063,26 +61844,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.8814866219518,
-        33.88057388814097
+        -117.88468315817035,
+        33.87884925243015
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Langsdorf Hall South Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88158586368533,
-          33.88057054798061
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88139274463627,
-          33.88057277475419
+          -117.88468190038682,
+          33.87878887052626
         ]
       }
     ]
@@ -62090,32 +61865,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88139274463627,
-        33.88057277475419
+        -117.88716434829709,
+        33.878586528878394
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Lot C East Parking",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8814866219518,
-          33.88057388814097
+          -117.88723542683675,
+          33.87862661172605
         ]
       },
       {
         "coordinates": [
-          -117.88138872132275,
-          33.880634011004815
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88139274463627,
-          33.880522672334635
+          -117.88711740964011,
+          33.87861770442824
         ]
       }
     ]
@@ -62123,26 +61892,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88138872132275,
-        33.880634011004815
+        -117.88782736915269,
+        33.88412921704069
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Lot D Parking",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88138738021823,
-          33.88068299997367
+          -117.88777238386805,
+          33.88410472354914
         ]
       },
       {
         "coordinates": [
-          -117.88139274463627,
-          33.88057277475419
+          -117.88776970165904,
+          33.884180430682214
         ]
       }
     ]
@@ -62150,26 +61919,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.88139006242726,
-        33.88039797285155
+        -117.8829986429378,
+        33.88020775926358
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Lot F Parking",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88139140353175,
-          33.880474796661794
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88149332747432,
-          33.88039685946248
+          -117.88310454794274,
+          33.880225745851504
         ]
       }
     ]
@@ -62177,26 +61940,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.88139140353175,
-        33.880474796661794
+        -117.88303714235515,
+        33.8815104825509
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Lot I Parking",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88139006242726,
-          33.88039797285155
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88139274463627,
-          33.880522672334635
+          -117.88303462045882,
+          33.881442562444
         ]
       }
     ]
@@ -62204,26 +61961,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.88139274463627,
-        33.880522672334635
+        -117.88506173696484,
+        33.87981000613647
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "McCarthy Hall North East Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88139274463627,
-          33.88057277475419
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88139140353175,
-          33.880474796661794
+          -117.8849591358926,
+          33.87981011583673
         ]
       }
     ]
@@ -62231,26 +61982,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88209950671168,
-        33.88038572557106
+        -117.88555001396237,
+        33.87986862967519
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
-    "isREntrancePoint": false,
+    "locName": "McCarthy Hall North Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": true,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88219070181819,
-          33.880382385403344
+          -117.88555001396237,
+          33.879915392292794
         ]
       },
       {
         "coordinates": [
-          -117.88201501712771,
-          33.88038906573862
+          -117.88554933310166,
+          33.87980113454943
         ]
       }
     ]
@@ -62258,26 +62009,20 @@
   {
     "coord": {
       "coordinates": [
-        -117.88201501712771,
-        33.88038906573862
+        -117.88505369033781,
+        33.879550584304646
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "McCarthy Hall South East Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88209950671168,
-          33.88038572557106
-        ]
-      },
-      {
-        "coordinates": [
-          -117.88191577539418,
-          33.880390179127794
+          -117.8849537833947,
+          33.87955044308359
         ]
       }
     ]
@@ -62285,8 +62030,8 @@
   {
     "coord": {
       "coordinates": [
-        -117.88191577539418,
-        33.880390179127794
+        -117.88239009087339,
+        33.880552465399596
       ]
     },
     "locName": "",
@@ -62297,14 +62042,14 @@
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88201501712771,
-          33.88038906573862
+          -117.88239009087339,
+          33.880602567801674
         ]
       },
       {
         "coordinates": [
-          -117.8818299447057,
-          33.880390179127794
+          -117.88238740866485,
+          33.8805012495809
         ]
       }
     ]
@@ -62312,26 +62057,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.8818299447057,
-        33.880390179127794
+        -117.88358818709634,
+        33.878934868909106
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Mihaylo Hall North Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88191577539418,
-          33.880390179127794
+          -117.88352917849802,
+          33.878893672797744
         ]
       },
       {
         "coordinates": [
-          -117.88175081953975,
-          33.88039129251693
+          -117.88364719569466,
+          33.87899053929824
         ]
       }
     ]
@@ -62339,26 +62084,26 @@
   {
     "coord": {
       "coordinates": [
-        -117.88175081953975,
-        33.88039129251693
+        -117.88340373298192,
+        33.87954731738289
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Mihaylo Hall Parking Lot",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.8818299447057,
-          33.880390179127794
+          -117.88344530722324,
+          33.87957181218346
         ]
       },
       {
         "coordinates": [
-          -117.88166364774678,
-          33.8803935192952
+          -117.88335679432573,
+          33.879531729779956
         ]
       }
     ]
@@ -62366,26 +62111,32 @@
   {
     "coord": {
       "coordinates": [
-        -117.88166364774678,
-        33.8803935192952
+        -117.88345735620564,
+        33.87883604794555
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Mihaylo Hall South Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88175081953975,
-          33.88039129251693
+          -117.88354074117396,
+          33.87880092515783
         ]
       },
       {
         "coordinates": [
-          -117.88158184037182,
-          33.88039240590608
+          -117.88339972899784,
+          33.87888607190008
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88352917849802,
+          33.878893672797744
         ]
       }
     ]
@@ -62393,26 +62144,275 @@
   {
     "coord": {
       "coordinates": [
-        -117.88158184037182,
-        33.88039240590608
+        -117.88850073574099,
+        33.879450767801
       ]
     },
-    "locName": "",
-    "isBEntrancePoint": false,
+    "locName": "Nutwood Parking Structure North Entrance",
+    "isBEntrancePoint": true,
     "isREntrancePoint": false,
     "isStairsPoint": false,
     "isElevatorsPoint": false,
     "neighborCoords": [
       {
         "coordinates": [
-          -117.88166364774678,
-          33.8803935192952
+          -117.88843770382911,
+          33.8794529946038
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88779263257068,
+        33.8786301870153
+      ]
+    },
+    "locName": "Nutwood Parking Structure South East Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.8877228951363,
+          33.87861125900713
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88540395621338,
+        33.88089484258853
+      ]
+    },
+    "locName": "Pollak Library South Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.8853296899892,
+          33.880847704633666
         ]
       },
       {
         "coordinates": [
-          -117.88149332747432,
-          33.88039685946248
+          -117.8853990574199,
+          33.88084440287947
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88547914987888,
+          33.88084454803563
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.8851022076994,
+        33.88150386068229
+      ]
+    },
+    "locName": "Starbucks Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88499648646497,
+          33.8814954810328
+        ]
+      },
+      {
+        "coordinates": [
+          -117.88517079039431,
+          33.88152631586352
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88827158952344,
+        33.8834940908611
+      ]
+    },
+    "locName": "State College Parking Structure North Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88820372553793,
+          33.88351961859008
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88424596928891,
+        33.88272738561755
+      ]
+    },
+    "locName": "Student Health & Counseling Center South Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88423597491176,
+          33.88265152729742
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88778138999653,
+        33.883457246655716
+      ]
+    },
+    "locName": "Student Recreation Center North Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.8877851715747,
+          33.88353278260668
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88740722183815,
+        33.88286828292993
+      ]
+    },
+    "locName": "Student Recreation Center South Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88731613275945,
+          33.88286364468246
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88680673570855,
+        33.88161670045952
+      ]
+    },
+    "locName": "Titan Shops",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88680222700178,
+          33.88154991258497
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88782390019814,
+        33.88678675256633
+      ]
+    },
+    "locName": "Titan Stadium North West Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88783234584176,
+          33.88684398058688
+        ]
+      },
+      {
+        "coordinates": [
+          -117.8878884199127,
+          33.88677154923669
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88625052329667,
+        33.8859042129035
+      ]
+    },
+    "locName": "Titan Stadium South Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88622520003895,
+          33.8858373725226
+        ]
+      }
+    ]
+  },
+  {
+    "coord": {
+      "coordinates": [
+        -117.88767616848853,
+        33.88616067393998
+      ]
+    },
+    "locName": "Titan Stadium South West Entrance",
+    "isBEntrancePoint": true,
+    "isREntrancePoint": false,
+    "isStairsPoint": false,
+    "isElevatorsPoint": false,
+    "neighborCoords": [
+      {
+        "coordinates": [
+          -117.88769045198947,
+          33.886081381522324
         ]
       }
     ]
