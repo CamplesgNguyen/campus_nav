@@ -71,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Signal headingAccuracy = Signal<double>(0.0);
   late Future permission;
   bool isWithinBounds = true;
+  bool isSimulating = false;
 
   @override
   void initState() {
@@ -132,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (context, permSnapshot) {
         if (permSnapshot.hasData && !permSnapshot.hasError) {
           bool? result = permSnapshot.data;
-          if (kIsWeb || result!) {
+          if (result!) {
             return StreamBuilder(
                 stream: positionStream, // Get current lat & longtitude
                 builder: (ctx, snapshot) {
@@ -146,13 +147,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     } else {
                       // Set center
-                      // centerCoord = LatLng(snapshot.data!.latitude, snapshot.data!.longitude);
+                      if (isInsideCampusBoundary(campusenterCoord, 605.0, LatLng(snapshot.data!.latitude, snapshot.data!.longitude))) {
+                        if (!isSimulating) {
+                          centerCoord = LatLng(snapshot.data!.latitude, snapshot.data!.longitude);
+                        } 
+                      } else {
+                        isWithinBounds = false;
+                      }
                       // Other algorithms
                       if (curPathFindingState == PathFindingState.finished) {
                         // Update heading data
                         manualHeadingValue = navMapRotation(shortestCoordinates);
                         // Routing events
-                        if (shortestCoordinates.isNotEmpty && distanceToDest(centerCoord!, shortestCoordinates) < 15) {
+                        if (shortestCoordinates.isNotEmpty &&
+                            Geolocator.distanceBetween(centerCoord!.latitude, centerCoord!.longitude, shortestCoordinates.last.latitude, shortestCoordinates.last.longitude) < 10) {
                           arrivedAtDest.value = true;
                           routingFinish();
                         }
@@ -168,13 +176,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         estimateNavTime.value = totalNavTimeCalc(shortestCoordinates, defaultWalkingSpeedMPH).pretty(abbreviated: true);
                       }
 
-                      if (isInsideCampusBoundary(campusenterCoord, 605.0, LatLng(snapshot.data!.latitude, snapshot.data!.longitude))) {
-                        centerCoord = LatLng(snapshot.data!.latitude, snapshot.data!.longitude);
-                      } else {
-                        isWithinBounds = false;
-                        // centerCoord = await outOfBoundPopup(context);
-                      }
-
                       return FlutterMap(
                         mapController: mapController,
                         options: MapOptions(
@@ -186,27 +187,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           onMapReady: () async {
                             if (!isWithinBounds) {
                               centerCoord = await outOfBoundPopup(context);
+                              isWithinBounds = true;
                               mapController.move(centerCoord!, mapDefaultZoomValue);
                             }
                             mapDoneLoading = true;
                             setState(() {});
                           },
-                          // onPositionChanged: (camera, hasGesture) async {
-                          //   // Onroute tracking
-                          //   if (curPathFindingState == PathFindingState.finished) {
-                          //     onRoute = onRouteCheck(shortestCoordinates);
-                          //     if (!onRoute) {
-                          //       contUpdatePos = false;
-                          //       exploredCoordinates.clear();
-                          //       shortestCoordinates.clear();
-                          //       curPathFindingState = PathFindingState.finding;
-                          //       await traceRoute(centerCoord!, destinationCoord!);
-                          //       onRoute = onRouteCheck(shortestCoordinates);
-                          //       curPathFindingState = PathFindingState.finished;
-                          //       setState(() {});
-                          //     }
-                          //   }
-                          // },
+                          
                           onTap: (tapPosition, point) {
                             if (!kIsWeb && showMappingLayer.value) {
                               mappedMakers.add(mappingMaker(point, false, false, false, false));
@@ -635,6 +622,23 @@ class _MyHomePageState extends State<MyHomePage> {
                           setState(() {});
                         },
                         child: Icon(showExploredPath.value ? Icons.pattern_sharp : Icons.linear_scale_sharp)),
+                    Visibility(
+                        visible: curPathFindingState == PathFindingState.finished,
+                        child: FloatingActionButton.small(
+                            onPressed: () async {
+                              isSimulating = true;
+                              if (shortestCoordinates.isNotEmpty) {
+                                centerCoord = shortestCoordinates[1];
+                                shortestCoordinates.removeAt(0);
+                                mapController.move(centerCoord!, 19);
+                                // await Future.delayed(const Duration(seconds: 3))
+                              } else {
+                                isSimulating = false;
+                              }
+
+                              setState(() {});
+                            },
+                            child: Icon(isSimulating ? Icons.directions_walk : Icons.directions_walk_outlined))),
                   ],
                 ),
               ),
