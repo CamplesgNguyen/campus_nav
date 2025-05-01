@@ -11,6 +11,7 @@ import 'package:campus_nav/helpers/custom_marker.dart';
 import 'package:campus_nav/helpers/enums.dart';
 import 'package:campus_nav/helpers/helper_funcs.dart';
 import 'package:campus_nav/helpers/json_helpers.dart';
+import 'package:campus_nav/helpers/oob_popup.dart';
 import 'package:campus_nav/helpers/popups.dart';
 import 'package:duration/duration.dart';
 import 'package:flutter/foundation.dart';
@@ -22,7 +23,6 @@ import 'package:flutter_map_math/flutter_geo_math.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:overlay_tooltip/overlay_tooltip.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:signals/signals_flutter.dart';
@@ -70,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool showOnlySavedCoords = false;
   Signal headingAccuracy = Signal<double>(0.0);
   late Future permission;
+  bool isWithinBounds = true;
 
   @override
   void initState() {
@@ -86,11 +87,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<bool> checkLocationPerm() async {
     LocationPermission perm = await Geolocator.checkPermission();
-    while (perm != LocationPermission.whileInUse && perm != LocationPermission.always) {
+    int tries = 0;
+    while (perm != LocationPermission.whileInUse && perm != LocationPermission.always || tries < 3) {
       await Geolocator.requestPermission();
       perm = await Geolocator.checkPermission();
+      tries++;
     }
-    if (perm == LocationPermission.whileInUse || perm == LocationPermission.always) {
+    if (perm == LocationPermission.whileInUse || perm == LocationPermission.always || tries >= 3) {
       return true;
     } else {
       return false;
@@ -143,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     } else {
                       // Set center
-                      centerCoord = LatLng(snapshot.data!.latitude, snapshot.data!.longitude);
+                      // centerCoord = LatLng(snapshot.data!.latitude, snapshot.data!.longitude);
                       // Other algorithms
                       if (curPathFindingState == PathFindingState.finished) {
                         // Update heading data
@@ -165,6 +168,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         estimateNavTime.value = totalNavTimeCalc(shortestCoordinates, defaultWalkingSpeedMPH).pretty(abbreviated: true);
                       }
 
+                      if (isInsideCampusBoundary(campusenterCoord, 605.0, LatLng(snapshot.data!.latitude, snapshot.data!.longitude))) {
+                        centerCoord = LatLng(snapshot.data!.latitude, snapshot.data!.longitude);
+                      } else {
+                        isWithinBounds = false;
+                        // centerCoord = await outOfBoundPopup(context);
+                      }
+
                       return FlutterMap(
                         mapController: mapController,
                         options: MapOptions(
@@ -173,7 +183,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           maxZoom: mapMaxZoomValue,
                           cameraConstraint:
                               CameraConstraint.containCenter(bounds: LatLngBounds(const LatLng(33.8892181509212, -117.89024039406391), const LatLng(33.87568283383185, -117.87979836324752))),
-                          onMapReady: () {
+                          onMapReady: () async {
+                            if (!isWithinBounds) {
+                              centerCoord = await outOfBoundPopup(context);
+                              mapController.move(centerCoord!, mapDefaultZoomValue);
+                            }
                             mapDoneLoading = true;
                             setState(() {});
                           },
@@ -300,53 +314,31 @@ class _MyHomePageState extends State<MyHomePage> {
                                       filled: true,
                                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                                       hintText: 'Enter your destination',
-                                      suffixIcon: Row(
-                                        spacing: 1,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          IconButton(
-                                              visualDensity: VisualDensity.adaptivePlatformDensity,
-                                              onPressed: savedCoordList.isNotEmpty
-                                                  ? () {
-                                                      if (showOnlySavedCoords) {
-                                                        showOnlySavedCoords = false;
-                                                        focusNode.unfocus();
-                                                      } else {
-                                                        showOnlySavedCoords = true;
-                                                        focusNode.requestFocus();
-                                                      }
-
-                                                      setState(() {});
-                                                    }
-                                                  : null,
-                                              icon: Icon(showOnlySavedCoords ? Icons.saved_search_outlined : Icons.saved_search)),
-                                          IconButton(
-                                              visualDensity: VisualDensity.adaptivePlatformDensity,
-                                              onPressed: () {
-                                                if (destLookupTextController.text.isEmpty) {
-                                                  curPathFindingState = PathFindingState.idle;
-                                                  focusNode.unfocus();
-                                                  exploredCoordinates.clear();
-                                                  shortestCoordinates.clear();
-                                                  destLookupTextController.clear();
-                                                  destinationCoord = null;
-                                                  destName = '';
-                                                  mapController.move(centerCoord!, mapDefaultZoomValue);
-                                                  mapController.rotate(0);
-                                                  manualHeadingValue = 0.0;
-                                                  contUpdatePos = false;
-                                                  arrivedAtDest.value = false;
-                                                } else {
-                                                  destLookupTextController.clear();
-                                                  curPathFindingState = PathFindingState.idle;
-                                                  destinationCoord = null;
-                                                  destName = '';
-                                                }
-                                                setState(() {});
-                                              },
-                                              icon: const Icon(Icons.clear))
-                                        ],
-                                      )),
+                                      suffixIcon: IconButton(
+                                          visualDensity: VisualDensity.compact,
+                                          onPressed: () {
+                                            if (destLookupTextController.text.isEmpty) {
+                                              curPathFindingState = PathFindingState.idle;
+                                              focusNode.unfocus();
+                                              exploredCoordinates.clear();
+                                              shortestCoordinates.clear();
+                                              destLookupTextController.clear();
+                                              destinationCoord = null;
+                                              destName = '';
+                                              mapController.move(centerCoord!, mapDefaultZoomValue);
+                                              mapController.rotate(0);
+                                              manualHeadingValue = 0.0;
+                                              contUpdatePos = false;
+                                              arrivedAtDest.value = false;
+                                            } else {
+                                              destLookupTextController.clear();
+                                              curPathFindingState = PathFindingState.idle;
+                                              destinationCoord = null;
+                                              destName = '';
+                                            }
+                                            setState(() {});
+                                          },
+                                          icon: const Icon(Icons.clear))),
                                 ),
                                 decorationBuilder: (context, child) => Material(
                                   type: MaterialType.card,
@@ -356,7 +348,23 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 itemBuilder: (context, point) => ListTile(
                                   title: Text(point.locName),
-                                  trailing: savedCoordList.contains(coordToString(point.coord)) ? const Icon(Icons.save) : null,
+                                  trailing: savedCoordList.contains(coordToString(point.coord))
+                                      ? IconButton(
+                                          onPressed: () {},
+                                          onLongPress: () async {
+                                            final prefs = await SharedPreferences.getInstance();
+                                            String curCoordString = coordToString(point.coord);
+                                            if (!savedCoordList.contains(curCoordString)) {
+                                              savedCoordList.add(curCoordString);
+                                              prefs.setStringList('savedCoords', savedCoordList);
+                                            } else {
+                                              savedCoordList.remove(curCoordString);
+                                              prefs.setStringList('savedCoords', savedCoordList);
+                                            }
+                                            setState(() {});
+                                          },
+                                          icon: const Icon(Icons.pin_drop))
+                                      : null,
                                 ),
                                 hideOnEmpty: true,
                                 hideOnSelect: true,
@@ -387,7 +395,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                   setState(() {});
                                 },
                                 suggestionsCallback: (String search) {
-                                  return suggestionsCallback(search, showOnlySavedCoords);
+                                  mappedCoords.sort((a, b) => a.locName.compareTo(b.locName));
+                                  mappedCoords.sort((a, b) => savedCoordList.contains(coordToString(b.coord)).toString().compareTo(savedCoordList.contains(coordToString(a.coord)).toString()));
+                                  return suggestionsCallback(search);
                                 },
                                 loadingBuilder: (context) => const Text('Loading...'),
                                 errorBuilder: (context, error) => const Text('Error!'),
@@ -630,7 +640,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Visibility(
-                visible: curPathFindingState == PathFindingState.finished,
+                visible: curPathFindingState == PathFindingState.ready || curPathFindingState == PathFindingState.finished,
                 child: Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: FloatingActionButton.small(
@@ -646,7 +656,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           }
                           setState(() {});
                         },
-                        child: Icon(savedCoordList.contains(coordToString(destinationCoord)) ? Icons.save : Icons.save_outlined)))),
+                        child: Icon(savedCoordList.contains(coordToString(destinationCoord)) ? Icons.pin_drop : Icons.pin_drop_outlined)))),
             Visibility(
                 visible: curPathFindingState == PathFindingState.finished,
                 child: Padding(

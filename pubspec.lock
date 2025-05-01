@@ -661,14 +661,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  overlay_tooltip:
-    dependency: "direct main"
-    description:
-      name: overlay_tooltip
-      sha256: "979623584d335a3a179b3a7bdf768ff11b76088764c2a37f0fb766f9a4d86150"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.4"
   package_config:
     dependency: transitive
     description:

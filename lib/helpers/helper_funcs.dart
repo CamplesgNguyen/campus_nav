@@ -1,5 +1,6 @@
 import 'package:campus_nav/global_variables.dart';
 import 'package:campus_nav/helpers/classes.dart';
+import 'package:flutter_map_math/flutter_geo_math.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:units_converter/units_converter.dart';
@@ -33,12 +34,12 @@ bool onRouteCheck(List<LatLng> coords) {
   return true;
 }
 
-Future<List<CoordPoint>> suggestionsCallback(String pattern, bool savedCoordsOnly) async => Future<List<CoordPoint>>.delayed(
+Future<List<CoordPoint>> suggestionsCallback(String pattern) async => Future<List<CoordPoint>>.delayed(
       const Duration(milliseconds: 100),
       () => mappedCoords.where((e) => e.locName.isNotEmpty).where((point) {
         final nameLower = point.locName.toLowerCase().split(' ').join('');
         final patternLower = pattern.toLowerCase().split(' ').join('');
-          return nameLower.contains(patternLower);
+        return nameLower.contains(patternLower);
       }).toList(),
     );
 
@@ -148,4 +149,9 @@ List<LatLng> reRoute(LatLng startCoord, LatLng destCoord) {
 String coordToString(LatLng? coord) {
   if (coord == null) return '';
   return '${coord.latitude}-${coord.longitude}';
+}
+
+bool isInsideCampusBoundary(LatLng center, double radius, LatLng curLoc) {
+  final boundary = FlutterMapMath().createBoundary(center, radius);
+  return boundary(curLoc);
 }
