@@ -347,7 +347,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               shortestCoordinates.clear();
                                               destLookupTextController.clear();
                                               destinationCoord = null;
-                                              removePickedPoint(pickedLocationMarker!.point);
+                                              if (pickedLocationMarker != null) removePickedPoint(pickedLocationMarker!.point);
                                               pickedLocationMarker = null;
                                               destName = '';
                                               mapController.move(centerCoord!, mapDefaultZoomValue);
@@ -402,7 +402,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   exploredCoordinates.clear();
                                   shortestCoordinates.clear();
                                   destLookupTextController.clear();
-                                  removePickedPoint(pickedLocationMarker!.point);
+                                  if (pickedLocationMarker != null) removePickedPoint(pickedLocationMarker!.point);
                                   pickedLocationMarker = null;
                                   destinationCoord = null;
                                   destName = '';
@@ -744,7 +744,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       shortestCoordinates.clear();
                       destLookupTextController.clear();
                       destinationCoord = null;
-                      removePickedPoint(pickedLocationMarker!.point);
+                      if (pickedLocationMarker != null) removePickedPoint(pickedLocationMarker!.point);
                       pickedLocationMarker = null;
                       destName = '';
                       mapController.move(centerCoord!, mapDefaultZoomValue);
