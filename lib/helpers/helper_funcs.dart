@@ -155,3 +155,19 @@ bool isInsideCampusBoundary(LatLng center, double radius, LatLng curLoc) {
   final boundary = FlutterMapMath().createBoundary(center, radius);
   return boundary(curLoc);
 }
+
+void setPickedPoint(LatLng coord) {
+  List<CoordPoint> neighbors = getNearbyPoints(coord);
+  for (var point in neighbors) {
+    point.neighborCoords.add(coord);
+  }
+  CoordPoint newCoordPoint = CoordPoint(coord, neighbors.map((e) => e.coord).toList());
+  mappedCoords.add(newCoordPoint);
+}
+
+void removePickedPoint(LatLng coord) {
+  for (var element in mappedCoords.where((e) => e.neighborCoords.indexWhere((c) => c.latitude == coord.latitude && c.longitude == coord.longitude) != -1)) {
+    element.neighborCoords.removeWhere((e) => e.latitude == coord.latitude && e.longitude == coord.longitude);
+  }
+  mappedCoords.removeWhere((element) => element.coord.latitude == coord.latitude && element.coord.longitude == coord.longitude);
+}

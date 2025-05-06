@@ -22,6 +22,7 @@ import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:flutter_map_math/flutter_geo_math.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:label_marker/label_marker.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -72,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late Future permission;
   bool isWithinBounds = true;
   bool isSimulating = false;
+  Marker? pickedLocationMarker;
 
   @override
   void initState() {
@@ -150,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       if (isInsideCampusBoundary(campusenterCoord, 605.0, LatLng(snapshot.data!.latitude, snapshot.data!.longitude))) {
                         if (!isSimulating) {
                           centerCoord = LatLng(snapshot.data!.latitude, snapshot.data!.longitude);
-                        } 
+                        }
                       } else {
                         isWithinBounds = false;
                       }
@@ -193,8 +195,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             mapDoneLoading = true;
                             setState(() {});
                           },
-                          
                           onTap: (tapPosition, point) {
+                            // Mapping Markers
                             if (!kIsWeb && showMappingLayer.value) {
                               mappedMakers.add(mappingMaker(point, false, false, false, false));
                               // Get neighbors
@@ -215,8 +217,34 @@ class _MyHomePageState extends State<MyHomePage> {
                               mappedCoordSave();
                               setState(() {});
                             }
+
+                            // Location Markers
+                            if (!showMappingLayer.value && (curPathFindingState == PathFindingState.idle || curPathFindingState == PathFindingState.ready)) {
+                              String coord = 'Lat: ${point.latitude.toStringAsFixed(5)} Long: ${point.longitude.toStringAsFixed(5)}';
+                              pickedLocationMarker = Marker(
+                                  width: coord.length * 9,
+                                  height: 80,
+                                  point: point,
+                                  child: InkWell(
+                                      onTap: () {
+                                        pickedLocationMarker = null;
+                                        destinationCoord = null;
+                                        removePickedPoint(point);
+                                        curPathFindingState = PathFindingState.idle;
+                                        setState(() {});
+                                      },
+                                      child: CustomLabelMarker(coord)),
+                                  rotate: true);
+                              removePickedPoint(point);
+                              setPickedPoint(point);
+                              destinationCoord = point;
+                              curPathFindingState = PathFindingState.ready;
+                              setState(() {});
+                            }
                           },
                         ),
+
+                        // Map Layers
                         children: [
                           TileLayer(
                             // Display map tiles from osm
@@ -240,10 +268,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
 
                           // Shortest Path
-                          PolylineLayer(polylines: [
-                            Polyline(points: headingPolyline, color: const Color.fromARGB(255, 0, 0, 0), strokeWidth: 5),
-                            Polyline(points: shortestCoordinates, color: Colors.blue, strokeWidth: 5)
-                          ]),
+                          Visibility(
+                            visible: shortestCoordinates.isNotEmpty,
+                            child: PolylineLayer(polylines: [
+                              // Polyline(points: headingPolyline, color: const Color.fromARGB(255, 0, 0, 0), strokeWidth: 5),
+                              Polyline(points: shortestCoordinates, color: Colors.blue, strokeWidth: 5)
+                            ]),
+                          ),
 
                           // User location marker
                           CurrentLocationLayer(
@@ -252,7 +283,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             positionStream: Stream.value(LocationMarkerPosition(latitude: centerCoord!.latitude, longitude: centerCoord!.longitude, accuracy: snapshot.data!.accuracy)),
                             headingStream: (kIsWeb || Platform.isWindows)
                                 ? Stream.value(LocationMarkerHeading(heading: manualHeadingValue, accuracy: headingAccuracy.watch(context)))
-                                : const LocationMarkerDataStreamFactory().fromCompassHeadingStream(),
+                                : const LocationMarkerDataStreamFactory().fromRotationSensorHeadingStream(),
                             style: const LocationMarkerStyle(
                               markerDirection: MarkerDirection.heading,
                             ),
@@ -261,9 +292,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           // Map Markers for intertest point
                           Visibility(
                               visible: destinationCoord != null,
-                              child: MarkerLayer(alignment: Alignment.center, rotate: true, markers: [
-                                if (destinationCoord != null) Marker(width: destName.length > 9 ? destName.length * 9 : 100, height: 80, point: destinationCoord!, child: LabelMarker(destName))
-                              ])),
+                              child: MarkerLayer(
+                                  alignment: Alignment.center,
+                                  rotate: true,
+                                  markers: [if (destinationCoord != null) Marker(width: destName.length * 9, height: 80, point: destinationCoord!, child: CustomLabelMarker(destName))])),
+
+                          Visibility(
+                              visible: pickedLocationMarker != null,
+                              child: MarkerLayer(alignment: Alignment.center, rotate: true, markers: pickedLocationMarker != null ? [pickedLocationMarker!] : [])),
 
                           //Mapped markers
                           Visibility(
@@ -311,6 +347,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                               shortestCoordinates.clear();
                                               destLookupTextController.clear();
                                               destinationCoord = null;
+                                              removePickedPoint(pickedLocationMarker!.point);
+                                              pickedLocationMarker = null;
                                               destName = '';
                                               mapController.move(centerCoord!, mapDefaultZoomValue);
                                               mapController.rotate(0);
@@ -364,6 +402,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   exploredCoordinates.clear();
                                   shortestCoordinates.clear();
                                   destLookupTextController.clear();
+                                  removePickedPoint(pickedLocationMarker!.point);
+                                  pickedLocationMarker = null;
                                   destinationCoord = null;
                                   destName = '';
                                   mapController.move(centerCoord!, mapDefaultZoomValue);
@@ -498,7 +538,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     //Center  before trace
     mapController.fitCamera(CameraFit.coordinates(
-        coordinates: [startCoord, destCoord], padding: EdgeInsets.symmetric(horizontal: mapController.camera.nonRotatedSize.x / 5, vertical: mapController.camera.nonRotatedSize.y / 5)));
+        coordinates: [startCoord, destCoord], padding: EdgeInsets.symmetric(horizontal: mapController.camera.nonRotatedSize.width / 5, vertical: mapController.camera.nonRotatedSize.height / 5)));
 
     while (exploredPoints.isEmpty || (exploredPoints.last.coord.latitude != destCoord.latitude && exploredPoints.last.coord.longitude != destCoord.longitude)) {
       var removedFrontierPoint = frontier.removeAt(0);
@@ -704,6 +744,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       shortestCoordinates.clear();
                       destLookupTextController.clear();
                       destinationCoord = null;
+                      removePickedPoint(pickedLocationMarker!.point);
+                      pickedLocationMarker = null;
                       destName = '';
                       mapController.move(centerCoord!, mapDefaultZoomValue);
                       mapController.rotate(0);

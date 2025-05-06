@@ -184,3 +184,4 @@ Future<void> mappingCoordSettingsPopup(context, CoordPoint point) async {
                 ]);
           }));
 }
+

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LabelMarker extends StatelessWidget {
+class CustomLabelMarker extends StatelessWidget {
   final String name;
-  const LabelMarker(this.name, {super.key});
+  const CustomLabelMarker(this.name, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,33 +11,20 @@ class LabelMarker extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 20.0,
+          height: 25.0,
           decoration: BoxDecoration(
               color: Colors.white,
-              border: Border.all(
-                color: Colors.green,
-              ),
-              borderRadius: const BorderRadius.only(topRight: Radius.circular(5), topLeft: Radius.circular(5))),
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-              child: Text(
-                name,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
-              ),
-            ),
+              border: Border.all(width: 1.5, color: Colors.green),
+              borderRadius: const BorderRadius.all(Radius.circular(5))),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Text(
+                  name,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
+                ),
           ),
         ),
-        Container(
-            height: 5.0,
-            decoration: BoxDecoration(
-                color: Colors.green,
-                border: Border.all(
-                  color: Colors.green,
-                ),
-                borderRadius: const BorderRadius.only(bottomRight: Radius.circular(5), bottomLeft: Radius.circular(5)))),
         ClipPath(
           clipper: CustomClipPath(),
           child: Container(
